@@ -1,0 +1,5 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="#FFF8E1" /> <!-- Светло-оранжевый фон -->
+    <stroke android:width="2dp" android:color="@color/colorOrange" /> <!-- Оранжевая рамка -->
+    <corners android:radius="12dp" /> <!-- Скруглённые края -->
+</shape>

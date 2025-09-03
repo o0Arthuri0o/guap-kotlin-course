@@ -1,0 +1,24 @@
+<!-- res/values/colors.xml -->
+<resources>
+    <!-- Primary brand color -->
+    <color name="colorPrimary">#FFA5DB</color>
+    <color name="colorPrimaryVariant">#B582FF</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+
+    <!-- Secondary accent color -->
+    <color name="colorSecondary">#03DAC5</color>
+    <color name="colorOnSecondary">#000000</color>
+
+    <!-- Background and surface colors -->
+    <color name="colorBackground">#FFFFFF</color>
+    <color name="colorOnBackground">#000000</color>
+    <color name="colorSurface">#FFFFFF</color>
+    <color name="colorOnSurface">#000000</color>
+    <color name="colorOrange" >#FF6900</color>
+    <color name="colorGray" >#B1B3B2</color>
+    <color name="colorBlue" >#009BFF</color>
+
+    <!-- Error color -->
+    <color name="colorError">#B00020</color>
+    <color name="colorOnError">#FFFFFF</color>
+</resources>

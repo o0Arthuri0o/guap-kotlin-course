@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Pizzeria</string>
+    <string name="error_empty">Please fill all fields</string>
+    <string name="pizza_added">Pizza %1$s added!</string>
+    <string name="nav_open">Open navigation</string>
+    <string name="nav_close">Close navigation</string>
+    <string name="pizza_image_desc">Изображение пиццы</string>
+</resources>

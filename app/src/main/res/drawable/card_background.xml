@@ -1,0 +1,18 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Рамка (border) -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/colorOrange" />
+            <corners android:radius="12dp" />
+        </shape>
+    </item>
+
+    <!-- Полупрозрачный фон -->
+    <item android:left="2dp" android:top="2dp" android:right="2dp" android:bottom="2dp">
+        <shape android:shape="rectangle">
+            <!-- Прозрачный белый фон (например, 80% прозрачности) -->
+            <solid android:color="#CCFFFFFF" />
+            <corners android:radius="10dp" />
+        </shape>
+    </item>
+</layer-list>
