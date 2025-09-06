@@ -1,4 +1,4 @@
-package com.example.pizzeria
+package com.example.motorcycleadmin
 
 import org.junit.Test
 

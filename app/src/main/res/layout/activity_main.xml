@@ -12,17 +12,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="?attr/colorPrimary"
-        android:title="Pizzeria"
+        android:title="Motorcycle Admin"
         android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar" />
 
-    <!-- RecyclerView для отображения списка пицц -->
+    <!-- RecyclerView для отображения списка мотоциклов -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-         />
+        />
 
-    <!-- FloatingActionButton для добавления пиццы -->
+    <!-- FloatingActionButton для добавления мотоцикла -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_add"
         android:layout_width="wrap_content"

@@ -1,9 +1,9 @@
-package com.example.pizzeria.models
+package com.example.motorcycleadmin.models
 
 import android.os.Parcel
 import android.os.Parcelable
 
-data class Pizza(
+data class Motorcycle(
     val id: Long = 0,
     val name: String,
     val description: String,
@@ -25,8 +25,8 @@ data class Pizza(
 
     override fun describeContents(): Int = 0
 
-    companion object CREATOR : Parcelable.Creator<Pizza> {
-        override fun createFromParcel(parcel: Parcel): Pizza = Pizza(parcel)
-        override fun newArray(size: Int): Array<Pizza?> = arrayOfNulls(size)
+    companion object CREATOR : Parcelable.Creator<Motorcycle> {
+        override fun createFromParcel(parcel: Parcel): Motorcycle = Motorcycle(parcel)
+        override fun newArray(size: Int): Array<Motorcycle?> = arrayOfNulls(size)
     }
 }

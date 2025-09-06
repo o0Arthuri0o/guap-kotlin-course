@@ -1,10 +1,10 @@
-package com.example.pizzeria.activities
+package com.example.motorcycleadmin.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.pizzeria.R
-import com.example.pizzeria.databinding.ActivityNavigationDrawerBinding
+import com.example.motorcycleadmin.R
+import com.example.motorcycleadmin.databinding.ActivityNavigationDrawerBinding
 
 class NavigationDrawerActivity : AppCompatActivity() {
 
@@ -30,11 +30,9 @@ class NavigationDrawerActivity : AppCompatActivity() {
         binding.navView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.nav_home -> finish()
-                // другие действия
             }
             binding.drawerLayout.closeDrawers()
             true
         }
     }
 }
-

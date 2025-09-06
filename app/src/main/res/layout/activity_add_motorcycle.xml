@@ -12,7 +12,7 @@
 
         <TextView
             android:id="@+id/tvFormTitle"
-            android:text="Добавление новой пиццы"
+            android:text="Добавление нового мотоцикла"
             android:textSize="24sp"
             android:textStyle="bold"
             android:gravity="center"
@@ -22,12 +22,12 @@
             android:textColor="@color/colorOrange" />
 
         <ImageView
-            android:id="@+id/ivPizzaPreview"
+            android:id="@+id/ivMotorcyclePreview"
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:scaleType="centerCrop"
             android:layout_marginBottom="8dp"
-            android:contentDescription="Изображение пиццы" />
+            android:contentDescription="@string/motorcycle_image_desc" />
 
         <Button
             android:id="@+id/btnPickImage"
@@ -37,10 +37,10 @@
             android:layout_marginBottom="16dp" />
 
         <EditText
-            android:id="@+id/etPizzaName"
+            android:id="@+id/etMotorcycleName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Название пиццы"
+            android:hint="Название мотоцикла"
             android:padding="12dp"
             android:layout_marginBottom="8dp"
             android:textColor="@color/colorOnBackground"
@@ -48,10 +48,10 @@
             android:background="@drawable/edit_text_background" />
 
         <EditText
-            android:id="@+id/etPizzaDescription"
+            android:id="@+id/etMotorcycleDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Описание пиццы"
+            android:hint="Описание мотоцикла"
             android:padding="12dp"
             android:layout_marginBottom="16dp"
             android:textColor="@color/colorOnBackground"
@@ -59,10 +59,10 @@
             android:background="@drawable/edit_text_background" />
 
         <Button
-            android:id="@+id/btnAddPizza"
+            android:id="@+id/btnAddMotorcycle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Добавить пиццу"
+            android:text="Добавить мотоцикл"
             android:background="@drawable/button_background"
             android:padding="12dp" />
     </LinearLayout>

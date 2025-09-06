@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">Pizzeria</string>
-    <string name="error_empty">Please fill all fields</string>
-    <string name="pizza_added">Pizza %1$s added!</string>
-    <string name="nav_open">Open navigation</string>
-    <string name="nav_close">Close navigation</string>
-    <string name="pizza_image_desc">Изображение пиццы</string>
+    <string name="app_name">Motorcycle Admin</string>
+    <string name="error_empty">Заполните все поля</string>
+    <string name="motorcycle_added">Мотоцикл %1$s добавлен!</string>
+    <string name="nav_open">Открыть навигацию</string>
+    <string name="nav_close">Закрыть навигацию</string>
+    <string name="motorcycle_image_desc">Изображение мотоцикла</string>
 </resources>

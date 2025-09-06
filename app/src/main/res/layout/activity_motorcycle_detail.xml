@@ -13,7 +13,8 @@
             android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:scaleType="centerCrop" />
+            android:scaleType="centerCrop"
+            android:contentDescription="Изображение мотоцикла"/>
 
         <TextView
             android:id="@+id/tv_name"
@@ -21,27 +22,27 @@
             android:layout_marginTop="16dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorOrange" />
+            android:textColor="@color/colorSecondary" />
 
         <TextView
             android:id="@+id/tv_description"
             android:layout_marginTop="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorOrange" />
+            android:textColor="@color/colorSecondary" />
 
         <Button
             android:id="@+id/btnEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Редактировать"
+            android:text="Редактировать мотоцикл"
             android:layout_marginTop="16dp"/>
 
         <Button
             android:id="@+id/btnDelete"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Удалить"
+            android:text="Удалить мотоцикл"
             android:layout_marginTop="8dp"
             android:textColor="@android:color/holo_red_dark"/>
     </LinearLayout>

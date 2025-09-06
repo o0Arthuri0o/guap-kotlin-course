@@ -1,4 +1,4 @@
-package com.example.pizzeria.activities
+package com.example.motorcycleadmin.activities
 
 import android.app.Activity
 import android.content.Intent
@@ -7,14 +7,14 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import com.example.pizzeria.databinding.ActivityAddPizzaBinding
-import com.example.pizzeria.models.Pizza
+import com.example.motorcycleadmin.databinding.ActivityAddMotorcycleBinding
+import com.example.motorcycleadmin.models.Motorcycle
 
-class AddPizzaActivity : AppCompatActivity() {
+class AddMotorcycleActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityAddPizzaBinding
+    private lateinit var binding: ActivityAddMotorcycleBinding
     private var selectedImageUri: Uri? = null
-    private var editPizza: Pizza? = null
+    private var editMotorcycle: Motorcycle? = null
 
     private val pickImageLauncher = registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
         uri?.let {
@@ -23,52 +23,52 @@ class AddPizzaActivity : AppCompatActivity() {
                 contentResolver.takePersistableUriPermission(it, Intent.FLAG_GRANT_READ_URI_PERMISSION)
             } catch (_: SecurityException) {
             }
-            binding.ivPizzaPreview.setImageURI(it)
+            binding.ivMotorcyclePreview.setImageURI(it)
         }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityAddPizzaBinding.inflate(layoutInflater)
+        binding = ActivityAddMotorcycleBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        editPizza = intent.getParcelableExtra("editPizza")
+        editMotorcycle = intent.getParcelableExtra("editMotorcycle")
 
-        if (editPizza != null) {
-            binding.tvFormTitle.text = "Редактирование пиццы"
-            binding.btnAddPizza.text = "Сохранить изменения"
-            binding.etPizzaName.setText(editPizza!!.name)
-            binding.etPizzaDescription.setText(editPizza!!.description)
+        if (editMotorcycle != null) {
+            binding.tvFormTitle.text = "Редактирование мотоцикла"
+            binding.btnAddMotorcycle.text = "Сохранить изменения"
+            binding.etMotorcycleName.setText(editMotorcycle!!.name)
+            binding.etMotorcycleDescription.setText(editMotorcycle!!.description)
 
-            editPizza!!.imageUri?.let {
+            editMotorcycle!!.imageUri?.let {
                 selectedImageUri = Uri.parse(it)
-                binding.ivPizzaPreview.setImageURI(selectedImageUri)
+                binding.ivMotorcyclePreview.setImageURI(selectedImageUri)
             }
         } else {
-            binding.ivPizzaPreview.setImageDrawable(null)
+            binding.ivMotorcyclePreview.setImageDrawable(null)
         }
 
         binding.btnPickImage.setOnClickListener {
             pickImageLauncher.launch("image/*")
         }
 
-        binding.btnAddPizza.setOnClickListener {
-            val name = binding.etPizzaName.text.toString().trim()
-            val desc = binding.etPizzaDescription.text.toString().trim()
+        binding.btnAddMotorcycle.setOnClickListener {
+            val name = binding.etMotorcycleName.text.toString().trim()
+            val desc = binding.etMotorcycleDescription.text.toString().trim()
 
             if (name.isEmpty() || desc.isEmpty()) {
                 Toast.makeText(this, "Заполните все поля", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            val pizza = Pizza(
+            val motorcycle = Motorcycle(
                 name = name,
                 description = desc,
                 imageUri = selectedImageUri?.toString()
             )
 
             setResult(Activity.RESULT_OK, Intent().apply {
-                putExtra("pizza", pizza)
+                putExtra("motorcycle", motorcycle)
             })
             finish()
         }

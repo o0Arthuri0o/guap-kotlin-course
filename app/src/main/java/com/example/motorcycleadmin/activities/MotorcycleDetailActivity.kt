@@ -1,4 +1,4 @@
-package com.example.pizzeria.activities
+package com.example.motorcycleadmin.activities
 
 import android.app.Activity
 import android.content.Intent
@@ -6,23 +6,23 @@ import android.net.Uri
 import android.os.Bundle
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import com.example.pizzeria.databinding.ActivityPizzaDetailBinding
-import com.example.pizzeria.models.Pizza
+import com.example.motorcycleadmin.databinding.ActivityMotorcycleDetailBinding
+import com.example.motorcycleadmin.models.Motorcycle
 
-class PizzaDetailActivity : AppCompatActivity() {
+class MotorcycleDetailActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityPizzaDetailBinding
-    private var pizza: Pizza? = null
+    private lateinit var binding: ActivityMotorcycleDetailBinding
+    private var motorcycle: Motorcycle? = null
     private var position: Int = -1
 
     private val editLauncher = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) { result ->
         if (result.resultCode == Activity.RESULT_OK) {
-            val editedPizza = result.data?.getParcelableExtra<Pizza>("pizza")
-            if (editedPizza != null) {
+            val editedMotorcycle = result.data?.getParcelableExtra<Motorcycle>("motorcycle")
+            if (editedMotorcycle != null) {
                 val returnIntent = Intent().apply {
-                    putExtra("editPizza", editedPizza)
+                    putExtra("editMotorcycle", editedMotorcycle)
                     putExtra("position", position)
                 }
                 setResult(Activity.RESULT_FIRST_USER, returnIntent)
@@ -33,19 +33,19 @@ class PizzaDetailActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityPizzaDetailBinding.inflate(layoutInflater)
+        binding = ActivityMotorcycleDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        pizza = intent.getParcelableExtra("pizza")
+        motorcycle = intent.getParcelableExtra("motorcycle")
         position = intent.getIntExtra("position", -1)
 
-        pizza?.let { pizza ->
-            binding.tvName.text = pizza.name
-            binding.tvDescription.text = pizza.description
+        motorcycle?.let { motorcycle ->
+            binding.tvName.text = motorcycle.name
+            binding.tvDescription.text = motorcycle.description
 
-            pizza.imageUri?.let {
+            motorcycle.imageUri?.let {
                 val uri = Uri.parse(it)
                 try {
                     binding.imageView.setImageURI(uri)
@@ -59,9 +59,9 @@ class PizzaDetailActivity : AppCompatActivity() {
         }
 
         binding.btnEdit.setOnClickListener {
-            pizza?.let {
-                val editIntent = Intent(this, AddPizzaActivity::class.java).apply {
-                    putExtra("editPizza", it)
+            motorcycle?.let {
+                val editIntent = Intent(this, AddMotorcycleActivity::class.java).apply {
+                    putExtra("editMotorcycle", it)
                 }
                 editLauncher.launch(editIntent)
             }
@@ -70,7 +70,7 @@ class PizzaDetailActivity : AppCompatActivity() {
         binding.btnDelete.setOnClickListener {
             val resultIntent = Intent().apply {
                 putExtra("position", position)
-                putExtra("pizzaId", pizza?.id)
+                putExtra("motorcycleId", motorcycle?.id)
             }
             setResult(Activity.RESULT_FIRST_USER + 1, resultIntent)
             finish()
